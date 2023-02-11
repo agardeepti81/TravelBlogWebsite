@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things To Do</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" >
+    <style>
+        #things{
+            text-decoration: none;
+            color: blue;
+        }
+        #things:link{
+            color: blue;
+        }
+        #things:hover{
+            background-color: black;
+            color:blueviolet;
+        }
+        div>h3{
+            background-color: rgb(92, 228, 228);
+            width: 50%;
+        }
+        div>h3:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script src="action.js"></script>
+</head>
+<body>
+    <div class="logo">
+        <div id="logowidth">
+            <img src="./images/logo.png" alt="Travel Advisor" width="120">
+        </div>
+        <div id="menu">
+            <br><a href="index.html" class="topnav" data-toggle = "tooltip" data-placement = "bottom"
+            title = "Home">Home</a><br>
+            <a href="blog.html" target="_parent" class="topnav" data-toggle = "tooltip" data-placement = "bottom"
+            title = "Blog">Blog</a><br>
+        </div>
+    </div>
+<div class="container">
+    <div class="row mt-4 mb-4">
+        <div class="col-7 border border-dark" >
+            <h3 class="mt-4">Beaches</h3>
+            <h4><a id="things" href="https://www.miamiandbeaches.com/neighborhoods/south-beach" target="_blank">South Beach</a></h4>
+            <h4><a id="things" href="https://www.codb.us/" target="_blank">Daytona Beach</a></h4>
+            <h4><a id="things" href="https://www.fortzacharytaylor.com/" target="_blank">Fort Zachary Taylor Beach</a></h4>
+            <h3>Amusement Parks</h3>
+            <h4><a id="things" href="https://disneyworld.disney.go.com/vacation-planning/" target="_blank">Disney</a></h4>
+            <h4><a id="things" href="https://www.universalorlando.com/web/en/us" target="_blank">Universal</a></h4>
+            <h4><a id="things" href="https://buschgardens.com/tampa/" target="_blank">Busch Gardens</a></h4>
+            <h4><a id="things" href="https://www.legoland.com/florida/" target="_blank">Legoland</a></h4>
+            <h3>Everglades National Park</h3>
+            <h4><a id="things" href="https://www.evergladessafaripark.com/" target="_blank">Airboat tours</a></h4>
+        </div>
+        <div class="col-5 border border-dark">
+            <h4 class="mt-4 bg-info text-center">For More Information please fill out the form below.</h4>
+            <form action="navigateTo.html" id="myForm">
+                <div class="form-group m-3">
+                    <label for="Name">Name:</label>
+                    <input name="Name" id="Name" pattern="^[a-zA-Z ]+" minlength="3" maxlength="25" placeholder="your name here" required/>
+                </div>
+                <div class="form-group m-3">
+                    <label for="Email">Email:</label>
+                    <input class="ms-1" name="Email" id="Email" pattern = "^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$" required placeholder="name@mail.com"/>
+                </div>
+                <div class="input-group m-3">
+                    <label class="input-group-text" for="topics">Please choose what do you want to know more about</label>
+                    <select class="form-select me-5" id="topics" name="topics" >
+                      <option selected value="choose">Choose...</option>
+                      <option value="Water Sports">Water Sports</option>
+                      <option value="Park Tickets and Deals">Park Tickets and Deals</option>
+                      <option value="Airboat Tours availability">Airboat Tours availability</option>
+                      <option value="NightLife">NightLife</option>
+                      <option value="Food and Drinks">Food and Drinks</option>
+                      <option value="Transportation">Transportation</option>
+                      <option value="Lodging">Lodging</option>
+                    </select>
+                </div>
+                <div class="m-3">
+                    <label for="question" class="form-label">You Question</label>
+                    <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+                </div>
+                <div class="m-3 justify-content-center">
+                    <button type="submit" value="click" onclick="passvalues()" class="btn btn-primary mb-3">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

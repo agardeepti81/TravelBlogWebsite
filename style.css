@@ -1,0 +1,21 @@
+.logo{
+    width: auto;
+    max-height: 120px;
+    display: flex;
+    background-color: black;
+}
+#logowidth{
+    width: 90%;
+    height: auto;
+}
+#menu{
+    width: 10%;
+    height: auto;
+}
+a.topnav{
+    color: white; 
+    text-decoration: none;
+    font-weight: bold; 
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
