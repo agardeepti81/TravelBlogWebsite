@@ -17,6 +17,7 @@ x.forEach((key) => {
         break;
 
         case "question": question.innerText = `We will soon respond about your question, ${localStorage.getItem(key)}`;
+        break;
     }
 });
 selectedDiv.appendChild(myname);
