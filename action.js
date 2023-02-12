@@ -1,4 +1,4 @@
-function passvalues(){
+function passvalues(event){
         window.localStorage.clear();
         let name = document.getElementById("Name").value;
         localStorage.setItem("name",name);
@@ -11,8 +11,9 @@ function passvalues(){
         if(topic == "choose" )
         {
             alert("Please choose a topic");
-            window.location.assign("thingstodo.html");
+            event.preventDefault();
         }
-        return false;
+        else
+            return false;
 }
 
