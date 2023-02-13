@@ -43,7 +43,3 @@ tr.appendChild(td3);
 tr.appendChild(td4);
 table.appendChild(tr);
 selectedDiv.appendChild(table);
-// selectedDiv.appendChild(myname);
-// selectedDiv.appendChild(mytopic);
-// selectedDiv.appendChild(question);
-// selectedDiv.appendChild(myemail);
