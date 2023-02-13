@@ -32,7 +32,7 @@
     <div class="col-4  border border-dark">
         <div id="post" class="row mt-3 text-center" >
             <h4 class="bg-info">Post a review</h4>
-            <form class="text-start" id="postReview">
+            <form action="" class="text-start" id="postReview">
                 <div class="form-group m-3">
                     <label for="userName">Name:</label>
                     <input name="userName" id="userName" pattern="^[a-zA-Z ]+" minlength="3" maxlength="25" placeholder="your name here" required/>
@@ -73,7 +73,6 @@ const reviews = [
 ]
 
 function postReview(event){
-    debugger;
     let userName = document.getElementById("userName").value;
     let userEmail = document.getElementById("userEmail").value;
     let review = document.getElementById("myreview").value;
