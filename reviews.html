@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+<div class="logo">
+    <div id="logowidth">
+        <img src="./images/logo.png" alt="Travel Advisor" width="120">
+    </div>
+    <div id="menu">
+        <br><br>
+        <a href="blog.html" target="_parent" class="topnav" data-toggle = "tooltip" data-placement = "bottom"
+        title = "Blog">Blog</a><br>
+        <a href="thingstodo.html" target="_blank" class="topnav" data-toggle = "tooltip" data-placement = "bottom"
+        title = "Things To Do">Things To Do</a><br>
+        <a href="#contact" class="topnav" data-toggle = "tooltip" data-placement = "bottom"
+        title = "Contact Us">Contact Us</a>
+    </div>
+</div>
+<div class="container mt-3">
+<div class="row">
+    <div class="col-8 border border-dark text-center">
+        <h4 class="bg-info mt-3">Reviews</h4>
+        <div id="review" class="row mt-3 " ></div>
+    </div>
+    <div class="col-4  border border-dark">
+        <div id="post" class="row mt-3 text-center" >
+            <h4 class="bg-info">Post a review</h4>
+            <form class="text-start" id="postReview">
+                <div class="form-group m-3">
+                    <label for="userName">Name:</label>
+                    <input name="userName" id="userName" pattern="^[a-zA-Z ]+" minlength="3" maxlength="25" placeholder="your name here" required/>
+                </div>
+                <div class="form-group m-3">
+                    <label for="userEmail">Email:</label>
+                    <input class="ms-1" name="userEmail" id="userEmail" pattern = "^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$" required placeholder="name@mail.com"/>
+                </div>
+                <div class="m-3">
+                    <label for="myreview" class="form-label">Review:</label>
+                    <textarea class="form-control" id="myreview" name="myreview" rows="4" required></textarea>
+                </div>
+                <div class="m-3 justify-content-center">
+                    <button type="submit" value="click" onclick="postReview(event)" class="btn btn-primary mb-3">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+const reviews = [
+{
+    "userName": "dee456",
+    "userEmail": "deepti7206@gmail.com",
+    "userReview": "This site is very useful, it helped me plan my vacation perfectly."
+},  
+{
+    "userName": "abc123",
+    "userEmail": "abc1234@gmail.com",
+    "userReview": "Great site, lots of information."
+},  
+{
+    "userName": "test456",
+    "userEmail": "testuser@yahoo.com",
+    "userReview": "This is a good site. I would prefer if we have option to purchase tickets as well here"
+}
+]
+
+function postReview(event){
+    debugger;
+    let userName = document.getElementById("userName").value;
+    let userEmail = document.getElementById("userEmail").value;
+    let review = document.getElementById("myreview").value;
+
+    let newdata = {
+        "userName": userName,
+        "userEmail": userEmail,
+        "userReview": review
+    };
+    reviews.push(newdata);
+    display();
+    event.preventDefault();
+}
+
+function display(){
+    let output = "";
+
+    reviews.forEach((i) => {
+        output += `<h5>*${i.userName}</h5><br>
+                <p>${i.userReview}</p><br><br>`
+    });
+document.getElementById("review").innerHTML = output;
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    display();
+})
+
+</script>
+</body>
+</html>

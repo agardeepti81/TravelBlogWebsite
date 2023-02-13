@@ -13,7 +13,5 @@ function passvalues(event){
             alert("Please choose a topic");
             event.preventDefault();
         }
-        else
-            return false;
 }
 
